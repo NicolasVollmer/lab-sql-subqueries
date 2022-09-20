@@ -23,13 +23,12 @@ WHERE title = 'alone trip';
 
 select first_name, last_name 
 from sakila.actor 
-where actor_id = (SELECT actor_id 
+where actor_id in (SELECT actor_id 
 	FROM sakila.film_actor
 	WHERE film_id = (SELECT film_id 
 		FROM sakila.film
 		WHERE title = 'alone trip'
         ));
--- been trying several ways but cannot seem to figure this out...
 
 # 4. Sales have been lagging among young families, and you wish to target all family movies for a promotion. Identify all movies categorized as family films.
 
